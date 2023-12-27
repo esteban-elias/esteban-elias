@@ -1,114 +1,134 @@
-'use client';
-import { useState } from 'react';
-
-const projects = [
-  {
-    title: 'Colegio Mallorca Backend API',
-    description:
-      'Express.js Backened API para la intranet del Colegio Mallorca',
-    stack: [
-      'TypeScript',
-      'Node.js',
-      'Express.js',
-      'PlanetScale',
-      'MySQL',
-      'Json Web Tokens',
-      'Bcrypt',
-    ],
-    image: 'Project 1 image',
-  },
-  {
-    title: 'Colegio Mallorca Frontend',
-    description:
-      'Vanilla CSS + Vanilla JS Frontend para la intranet del Colegio Mallorca',
-    stack: ['HTML', 'CSS', 'JavaScript'],
-    image: 'Project 2 image',
-  },
-  {
-    title: 'Emporio E-commerce',
-    description: 'React Bootstrap E-commerce',
-    stack: ['React', 'Bootstrap', 'TypeScript'],
-    image: 'Project 3 image',
-  },
-  {
-    title: 'Jersan Landing Page',
-    description:
-      'React Bootstrap Landing Page para Jersan, empresa constructora',
-    stack: ['React', 'Bootstrap', 'TypeScript'],
-    image: 'Project 4 image',
-  },
-  {
-    title: 'PuntoClick E-commerce',
-    description: 'Django Bootstrap E-commerce',
-    stack: ['Python', 'Bootstrap'],
-    image: 'Project 5 image',
-  },
-  {
-    title: 'Portfolio',
-    description: 'Next.js Tailwind portafolio',
-    stack: ['React', 'Tailwind', 'TypeScript', 'Next.js'],
-    image: 'Project 6 image',
-  },
-];
-
 export default function Home() {
-  const [currentProject, setCurrentProject] = useState(0);
-
   return (
-    <main>
-      <div className="container h-screen">
-        <section className="h-1/2 flex border">
-          <div className="w-1/2 flex flex-col justify-center border">
-            <div className="w-3/4 h-1/3 self-center border rounded">
-              Picture
-            </div>
-            <div className="w-3/4 h-1/5 self-center mt-4 border rounded">
-              ❤️ Desarrollo web 
-            </div>
+    <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto">
+      {/* Profile section */}
+      <section className="w-full h-96 flex flex-col sm:flex-row justify-center items-center bg-sky-200 rounded">
+        <div>
+          <img
+            src="/profile-picture.jpeg"
+            alt="Foto perfil Esteban Castillo"
+            className="rounded-full w-48 h-48 object-cover"
+          />
+        </div>
+        <div className="flex flex-col items-center sm:items-start sm:ms-8">
+          <h1 className="text-2xl sm:text-4xl font-bold mt-4">
+            Esteban Castillo
+          </h1>
+          <p className="sm:text-lg w-96 mt-2">
+            Analista Programador y estudiante de Ingeniería Informática.
+            Interesado en el Desarrollo Web.
+          </p>
+          <div>
+            <button className="bg-green-200 rounded px-4 py-2 mt-4">
+              Descargar curriculum
+            </button>
           </div>
-          <div className="w-1/2 flex flex-col justify-center">
-            <h2 className="w-3/4 self-center border rounded">
-              Proyectos
-            </h2>
-            <ul className="w-3/4 h-3/5 self-center mt-4">
-              {projects.map((project, index) => (
-                <li
-                  className={`h-1/6 border rounded mt-2 ${
-                    index === currentProject
-                      ? 'bg-gray-200'
-                      : 'hover:bg-gray-200'
-                  }`}
-                  onClick={() => setCurrentProject(index)}
-                  key={project.title}
-                >
-                  {project.title}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-        <section className="h-1/2 flex flex-col">
-          <div className="h-full">
-            <div className="h-1/2 mx-8 mt-8 border rounded">
-              {projects[currentProject].image}
+        </div>
+      </section>
+
+      {/* Projects section */}
+      <section className="flex flex-col w-full grow rounded">
+        <h2 className="text-2xl font-semibold mt-16">Proyectos</h2>
+        {proyects.map((proyect) => (
+          <article
+            key={proyect.id}
+            className="w-full h-[28rem] flex flex-col sm:flex-row justify-center items-center mt-8 bg-sky-200 rounded"
+          >
+            <div className="h-48 sm:w-1/2 ms-8 me-4">
+              <img
+                src={proyect.image}
+                alt={`Imagen del proyecto ${proyect.name}`}
+                className="object-cover w-96 h-full rounded"
+              />
             </div>
-            <div className="h-1/3 mx-8 mt-4 flex flex-col">
-              <div className="h-1/3 border rounded">
-                {projects[currentProject].description}
-              </div>
-              <div className="h-2/3 mt-4">
-                <div className="flex flex-col flex-wrap h-full border rounded">
-                  {projects[currentProject].stack.map((item) => (
-                    <li className="w-1/2" key={item}>
-                      {item}
-                    </li>
-                  ))}
+            <div className="sm:w-1/2 sm:px-4">
+              <div className="mt-2">
+                <h3 className="text-xl font-medium mt-4">
+                  {proyect.name}
+                </h3>
+                <p className="mt-2">{proyect.description}</p>
+                <div className="mt-2">
+                  {proyect.techStack.join(' - ')}
                 </div>
               </div>
+              <div className="flex space-x-4 h-12 mt-4">
+                <button className="bg-green-200 w-24 rounded">
+                  <a href={proyect.demoUrl}>Demo</a>
+                </button>
+                <button className="bg-green-200 w-24 rounded">
+                  <a href={proyect.repoUrl}>Repo</a>
+                </button>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </article>
+        ))}
+      </section>
+
+      {/* Contact section */}
+      <section></section>
     </main>
   );
 }
+
+const proyects = [
+  {
+    id: 1,
+    name: 'Proyecto 1',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
+    techStack: ['React', 'Tailwind', 'Next.js'],
+    image: 'https://picsum.photos/200/300',
+    demoUrl: 'https://www.google.com',
+    repoUrl: 'https://www.google.com',
+  },
+  {
+    id: 2,
+    name: 'Proyecto 2',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
+    techStack: ['React', 'Tailwind', 'Next.js'],
+    image: 'https://picsum.photos/200/300',
+    demoUrl: 'https://www.google.com',
+    repoUrl: 'https://www.google.com',
+  },
+  {
+    id: 3,
+    name: 'Proyecto 3',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
+    techStack: ['React', 'Tailwind', 'Next.js'],
+    image: 'https://picsum.photos/200/300',
+    demoUrl: 'https://www.google.com',
+    repoUrl: 'https://www.google.com',
+  },
+  {
+    id: 4,
+    name: 'Proyecto 4',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
+    techStack: ['React', 'Tailwind', 'Next.js'],
+    image: 'https://picsum.photos/200/300',
+    demoUrl: 'https://www.google.com',
+    repoUrl: 'https://www.google.com',
+  },
+  {
+    id: 5,
+    name: 'Proyecto 5',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
+    techStack: ['React', 'Tailwind', 'Next.js'],
+    image: 'https://picsum.photos/200/300',
+    demoUrl: 'https://www.google.com',
+    repoUrl: 'https://www.google.com',
+  },
+  {
+    id: 6,
+    name: 'Proyecto 6',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
+    techStack: ['React', 'Tailwind', 'Next.js'],
+    image: 'https://picsum.photos/200/300',
+    demoUrl: 'https://www.google.com',
+    repoUrl: 'https://www.google.com',
+  },
+];
