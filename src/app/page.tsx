@@ -1,16 +1,16 @@
 export default function Home() {
   return (
-    <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto">
+    <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-4">
       {/* Profile section */}
-      <section className="w-full h-96 flex flex-col sm:flex-row justify-center items-center bg-gray-100 rounded">
-        <div>
+      <section className="w-full h-96 flex flex-col sm:flex-row justify-center items-center sm:gap-8 bg-gray-100 rounded">
+        <div className="w-48 h-48">
           <img
             src="/profile-picture.jpeg"
             alt="Foto perfil Esteban Castillo"
-            className="rounded-full w-48 h-48 object-cover"
+            className="rounded-full w-full h-full object-cover"
           />
         </div>
-        <div className="flex flex-col items-center sm:items-start sm:ms-8">
+        <div className="flex flex-col items-center sm:items-start">
           <h1 className="text-2xl sm:text-4xl font-bold mt-4">
             Esteban Castillo
           </h1>
@@ -32,16 +32,16 @@ export default function Home() {
         {proyects.map((proyect) => (
           <article
             key={proyect.id}
-            className="w-full h-[28rem] flex flex-col sm:flex-row justify-center items-center mt-8 bg-gray-100 rounded"
+            className="h-[30rem] sm:h-60 flex flex-col sm:flex-row sm:items-center mt-8 sm:gap-6 bg-gray-100 rounded"
           >
-            <div className="h-48 sm:w-1/2 ms-8 me-4">
+            <div className="h-72 sm:w-1/2 sm:h-full">
               <img
                 src={proyect.image}
                 alt={`Imagen del proyecto ${proyect.name}`}
-                className="object-cover w-96 h-full rounded"
+                className="object-cover w-full h-full rounded"
               />
             </div>
-            <div className="sm:w-1/2 sm:px-4">
+            <div className="sm:w-1/2">
               <div className="mt-2">
                 <h3 className="text-xl font-medium mt-4">
                   {proyect.name}
@@ -51,11 +51,11 @@ export default function Home() {
                   {proyect.techStack.join(' - ')}
                 </div>
               </div>
-              <div className="flex space-x-4 h-12 mt-4">
-                <button className="bg-gray-300 w-24 rounded">
+              <div className="flex gap-4 mt-4">
+                <button className="bg-gray-300 px-4 py-2 rounded">
                   <a href={proyect.demoUrl}>Demo</a>
                 </button>
-                <button className="bg-gray-300 w-24 rounded">
+                <button className="bg-gray-300 px-4 py-2 rounded">
                   <a href={proyect.repoUrl}>Repo</a>
                 </button>
               </div>
