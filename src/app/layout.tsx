@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} font-sans`}>
+      <body className={`${openSans.variable} font-sans pb-10`}>
         {children}
       </body>
     </html>
