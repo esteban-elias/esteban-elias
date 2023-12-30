@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-4">
       {/* Profile section */}
-      <section className="w-full h-96 flex flex-col sm:flex-row justify-center items-center sm:gap-8 bg-gray-100 rounded">
+      <section className="w-full h-[28rem] sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-8 bg-gray-100 rounded">
         <div className="w-48 h-48">
           <img
             src="/profile-picture.jpeg"
@@ -18,10 +18,19 @@ export default function Home() {
             Analista Programador y estudiante de Ingeniería en Ciberseguridad.
             Interesado en el Desarrollo Web.
           </p>
-          <div>
+          <div className="flex gap-4">
             <button className="bg-gray-300 rounded px-4 py-2 mt-4">
-              Descargar curriculum
+              Currículum
             </button>
+            <button className="bg-gray-300 rounded px-4 py-2 mt-4">
+             GitHub 
+            </button>
+            <button className="bg-gray-300 rounded px-4 py-2 mt-4">
+             LinkedIn 
+            </button>
+          </div>
+          <div className="bg-gray-300 rounded px-4 py-2 mt-4">
+            esteban.castillo.contact@gmail.com
           </div>
         </div>
       </section>
