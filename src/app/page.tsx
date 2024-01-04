@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-4">
       {/* Profile section */}
-      <section className="w-full h-[28rem] sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-8 bg-gray-100 rounded">
+      <section className="w-full h-128 sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-8 bg-gray-100 rounded">
         <div className="w-48 h-48">
           <img
             src="/profile-picture.jpeg"
@@ -41,7 +41,7 @@ export default function Home() {
         {proyects.map((proyect) => (
           <article
             key={proyect.id}
-            className="h-[30rem] sm:h-60 flex flex-col sm:flex-row sm:items-center mt-8 sm:gap-6 bg-gray-100 rounded"
+            className="h-128 sm:h-60 flex flex-col sm:flex-row sm:items-center mt-8 sm:gap-6 bg-gray-100 rounded"
           >
             <div className="h-72 sm:w-1/2 sm:h-full">
               <img
