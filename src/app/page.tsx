@@ -14,24 +14,16 @@ export default function Home() {
           <h1 className="text-2xl sm:text-4xl font-bold mt-4">
             Esteban Castillo
           </h1>
-          <p className="sm:text-lg w-96 mt-2">
-            Analista Programador y estudiante de Ingeniería en Ciberseguridad.
-            Interesado en el Desarrollo Web.
-          </p>
-          <div className="flex gap-4">
-            <button className="bg-gray-300 rounded px-4 py-2 mt-4">
-              Currículum
-            </button>
-            <button className="bg-gray-300 rounded px-4 py-2 mt-4">
-             GitHub 
-            </button>
-            <button className="bg-gray-300 rounded px-4 py-2 mt-4">
-             LinkedIn 
-            </button>
-          </div>
-          <div className="bg-gray-300 rounded px-4 py-2 mt-4">
-            esteban.castillo.contact@gmail.com
-          </div>
+          <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-2">
+            Analista Programador y actual estudiante de Ingeniería en
+            Ciberseguridad. Interesado en el Desarrollo Web.
+         </p>
+          <ul className="w-full text-sm sm:text-lg mt-2">
+            <li>Curriculum</li>
+            <li>GitHub</li>
+            <li>LinkedIn</li>
+            <li>esteban.castillo.contact@gmail.com</li>
+          </ul>
         </div>
       </section>
 
