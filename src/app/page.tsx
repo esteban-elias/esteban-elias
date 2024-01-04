@@ -17,7 +17,7 @@ export default function Home() {
           <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-2">
             Analista Programador y actual estudiante de Ingeniería en
             Ciberseguridad. Interesado en el Desarrollo Web.
-         </p>
+          </p>
           <ul className="w-full text-sm sm:text-lg mt-2">
             <li>Curriculum</li>
             <li>GitHub</li>
@@ -33,15 +33,13 @@ export default function Home() {
         {proyects.map((proyect) => (
           <article
             key={proyect.id}
-            className="h-128 sm:h-60 flex flex-col sm:flex-row sm:items-center mt-8 sm:gap-6 rounded"
+            className="sm:h-60 flex flex-col sm:flex-row sm:items-center mt-8 sm:gap-6 rounded"
           >
-            <div className="h-72 sm:w-1/2 sm:h-full">
-              <img
-                src={proyect.image}
-                alt={`Imagen del proyecto ${proyect.name}`}
-                className="object-cover w-full h-full rounded"
-              />
-            </div>
+            <img
+              src={proyect.image}
+              alt={`Imagen del proyecto ${proyect.name}`}
+              className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded"
+            />
             <div className="sm:w-1/2">
               <div className="mt-2">
                 <h3 className="text-xl font-medium mt-4">
