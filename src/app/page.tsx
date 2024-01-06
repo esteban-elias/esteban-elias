@@ -3,7 +3,7 @@ export default function Home() {
     <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-5">
       {/* Profile section */}
       <section className="w-full h-[30rem] sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-16 sm:mt-16">
-        <div className="w-48 h-48">
+        <div className="w-48 h-48 sm:w-56 sm:h-56">
           <img
             src="/profile-picture.jpeg"
             alt="Foto perfil Esteban Castillo"
