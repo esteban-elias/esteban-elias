@@ -14,11 +14,11 @@ export default function Home() {
           <h1 className="text-2xl sm:text-4xl font-bold mt-4">
             Esteban Castillo
           </h1>
-          <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-2">
+          <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-4">
             Analista Programador y actual estudiante de Ingeniería en
             Ciberseguridad. Interesado en el Desarrollo Web.
           </p>
-          <ul className="w-full text-sm sm:text-lg mt-2">
+          <ul className="w-full text-sm sm:text-lg mt-4">
             <li>Curriculum</li>
             <li>GitHub</li>
             <li>LinkedIn</li>
@@ -28,12 +28,14 @@ export default function Home() {
       </section>
 
       {/* Projects section */}
-      <section className="flex flex-col w-full grow rounded">
-        <h2 className="text-2xl font-semibold mt-16">Proyectos</h2>
-        {proyects.map((proyect) => (
+      <section className="flex flex-col w-full grow rounded sm:mt-16">
+        <h2 className="text-2xl font-semibold">Proyectos</h2>
+        {proyects.map((proyect, index) => (
           <article
             key={proyect.id}
-            className="sm:h-60 flex flex-col sm:flex-row sm:items-center mt-8 sm:gap-6 rounded"
+            className={`sm:h-60 flex flex-col sm:flex-row sm:items-center ${
+              index == 0 ? 'mt-10 sm:mt-16' : 'mt-16'
+            } sm:gap-6 rounded`}
           >
             <img
               src={proyect.image}
