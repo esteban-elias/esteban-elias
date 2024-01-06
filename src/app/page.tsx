@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-4">
+    <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-5">
       {/* Profile section */}
-      <section className="w-full h-128 sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-8 rounded">
+      <section className="w-full h-128 sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-16 sm:mt-16">
         <div className="w-48 h-48">
           <img
             src="/profile-picture.jpeg"
@@ -11,14 +11,14 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col items-center sm:items-start">
-          <h1 className="font-montserrat font-bold text-2xl sm:text-4xl mt-4">
+          <h1 className="font-montserrat font-bold text-2xl sm:text-4xl mt-4 sm:mt-0">
             Esteban Castillo
           </h1>
           <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-4">
-            Analista Programador y actual estudiante de Ingeniería en
-            Ciberseguridad. Interesado en el Desarrollo Web.
+            Analista Programador y estudiante de Ingeniería Informática.
+            Interesado en el Desarrollo Web.
           </p>
-          <ul className="w-full text-sm sm:text-lg mt-4">
+          <ul className="w-full text-sm sm:text-lg mt-4 sm:mt-4">
             <li>Curriculum</li>
             <li>GitHub</li>
             <li>LinkedIn</li>
@@ -28,13 +28,15 @@ export default function Home() {
       </section>
 
       {/* Projects section */}
-      <section className="flex flex-col w-full grow rounded sm:mt-16">
-        <h2 className="font-montserrat font-bold text-2xl">Proyectos</h2>
+      <section className="flex flex-col w-full grow sm:mt-12">
+        <h2 className="font-montserrat font-bold text-2xl">
+          Proyectos
+        </h2>
         {proyects.map((proyect, index) => (
           <article
             key={proyect.id}
             className={`sm:h-60 flex flex-col sm:flex-row sm:items-center ${
-              index == 0 ? 'mt-10 sm:mt-16' : 'mt-16'
+              index == 0 ? 'mt-9 sm:mt-10' : 'mt-20'
             } sm:gap-6 rounded`}
           >
             <img
@@ -44,15 +46,15 @@ export default function Home() {
             />
             <div className="sm:w-1/2">
               <div className="mt-2">
-                <h3 className="font-montserrat font-bold text-xl mt-4">
+                <h3 className="font-montserrat font-bold text-xl mt-6">
                   {proyect.name}
                 </h3>
-                <p className="mt-2">{proyect.description}</p>
-                <div className="mt-2">
+                <p className="mt-3">{proyect.description}</p>
+                <div className="mt-3">
                   {proyect.techStack.join(' - ')}
                 </div>
               </div>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-5">
                 <button className="bg-gray-300 px-4 py-2 rounded">
                   <a href={proyect.demoUrl}>Demo</a>
                 </button>
