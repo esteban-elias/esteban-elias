@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${montserrat.variable} font-sans pb-16 sm:pb-24`}
+        className={`${openSans.variable} ${montserrat.variable} font-sans pb-16 sm:pb-24 bg-gradient-to-b from-sky-50 from-10% sm:from-15% via-sky-200 via-15% sm:via-30% to-sky-200 to-100%`}
       >
         {children}
       </body>
