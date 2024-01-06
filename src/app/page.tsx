@@ -11,7 +11,7 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col items-center sm:items-start">
-          <h1 className="text-2xl sm:text-4xl font-bold mt-4">
+          <h1 className="font-montserrat font-bold text-2xl sm:text-4xl mt-4">
             Esteban Castillo
           </h1>
           <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-4">
@@ -29,7 +29,7 @@ export default function Home() {
 
       {/* Projects section */}
       <section className="flex flex-col w-full grow rounded sm:mt-16">
-        <h2 className="text-2xl font-semibold">Proyectos</h2>
+        <h2 className="font-montserrat font-bold text-2xl">Proyectos</h2>
         {proyects.map((proyect, index) => (
           <article
             key={proyect.id}
@@ -44,7 +44,7 @@ export default function Home() {
             />
             <div className="sm:w-1/2">
               <div className="mt-2">
-                <h3 className="text-xl font-medium mt-4">
+                <h3 className="font-montserrat font-bold text-xl mt-4">
                   {proyect.name}
                 </h3>
                 <p className="mt-2">{proyect.description}</p>

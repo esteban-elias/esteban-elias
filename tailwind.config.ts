@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-open-sans)'],
+        montserrat: ['var(--font-montserrat)'],
       },
       spacing: {
         128: '32rem',
