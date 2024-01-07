@@ -5,9 +5,9 @@ export default function Home() {
       <section className="w-full h-128 sm:h-96 flex flex-col sm:flex-row justify-center items-center sm:gap-16 sm:mt-16">
         <div className="w-48 h-48 sm:w-56 sm:h-56">
           <img
-            src="/profile-picture.jpeg"
+            src="/profile-picture.png"
             alt="Foto perfil Esteban Castillo"
-            className="rounded-full w-full h-full object-cover"
+            className="rounded-full w-full h-full object-cover shadow-inner"
           />
         </div>
         <div className="flex flex-col items-center sm:items-start">
@@ -50,7 +50,7 @@ export default function Home() {
             <img
               src={proyect.image}
               alt={`Imagen del proyecto ${proyect.name}`}
-              className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded"
+              className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded shadow-xl"
             />
             <div className="sm:w-1/2">
               <div className="mt-2">
