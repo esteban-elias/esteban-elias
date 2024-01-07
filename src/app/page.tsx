@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-5">
       {/* Profile section */}
-      <section className="w-full h-[30rem] sm:h-80 flex flex-col sm:flex-row justify-center items-center sm:gap-16 sm:mt-16">
+      <section className="w-full h-128 sm:h-96 flex flex-col sm:flex-row justify-center items-center sm:gap-16 sm:mt-16">
         <div className="w-48 h-48 sm:w-56 sm:h-56">
           <img
             src="/profile-picture.jpeg"
@@ -15,20 +15,28 @@ export default function Home() {
             Esteban Castillo
           </h1>
           <p className="max-w-sm text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-4">
-            Analista Programador y estudiante de Ingeniería Informática.
-            Interesado en el Desarrollo Web.
+            Analista Programador y estudiante de Ingeniería Informática
+            — Desarrollo Web.
           </p>
-          <ul className="w-full text-sm sm:text-lg mt-4 sm:mt-4">
-            <li>Curriculum</li>
-            <li>GitHub</li>
-            <li>LinkedIn</li>
-            <li>esteban.castillo.contact@gmail.com</li>
+          <ul className="w-full bg-sky-100 text-sm sm:text-lg mt-6 sm:mt-6 border border-sky-300 rounded shadow-lg">
+            <li className="font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+              Curriculum
+            </li>
+            <li className="font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+              GitHub
+            </li>
+            <li className="font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+              LinkedIn
+            </li>
+            <li className="font-bold text-sky-950 py-2 ps-4 hover:bg-sky-200">
+              esteban.castillo.contact@gmail.com
+            </li>
           </ul>
         </div>
       </section>
 
       {/* Projects section */}
-      <section className="flex flex-col w-full grow sm:mt-12">
+      <section className="flex flex-col w-full grow mt-8 sm:mt-12">
         <h2 className="font-montserrat font-bold text-2xl">
           Proyectos
         </h2>
