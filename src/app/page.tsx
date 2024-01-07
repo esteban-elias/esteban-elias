@@ -45,7 +45,7 @@ export default function Home() {
             key={proyect.id}
             className={`sm:h-60 flex flex-col sm:flex-row sm:items-center ${
               index == 0 ? 'mt-9 sm:mt-10' : 'mt-20'
-            } sm:gap-6 rounded`}
+            } sm:gap-10 rounded`}
           >
             <img
               src={proyect.image}
