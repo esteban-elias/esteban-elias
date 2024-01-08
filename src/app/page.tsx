@@ -21,29 +21,29 @@ export default function Home() {
             Analista Programador y estudiante de Ingeniería Informática
             — Desarrollo Web.
           </p>
-          <ul className="w-full bg-sky-100 text-sm sm:text-lg mt-6 sm:mt-6 border border-sky-300 rounded shadow-lg">
-            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+          <ul className="w-full bg-sky-100 text-sm sm:text-lg mt-6 sm:mt-6 rounded shadow-lg">
+            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 border-b border-sky-300 hover:bg-sky-200">
               <FaFilePdf
                 color={'#F40F02'}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
               Currículum
             </li>
-            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 border-b border-sky-300 hover:bg-sky-200">
               <FaGithub
                 color={'#24292E'}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
               GitHub
             </li>
-            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 border-b border-sky-300 hover:bg-sky-200">
               <FaLinkedin
                 color={'#0077B5'}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
               LinkedIn
             </li>
-            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 hover:bg-sky-200">
+            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 hover:bg-sky-200">
               <IoIosMail className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1" />
               esteban.castillo.contact@gmail.com
             </li>
