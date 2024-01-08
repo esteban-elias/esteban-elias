@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-5">
       {/* Profile section */}
-      <section className="w-full h-128 sm:h-96 flex flex-col sm:flex-row justify-center items-center sm:gap-16 sm:mt-16">
+      <section className="w-full h-128 sm:h-96 flex flex-col sm:flex-row justify-center items-center sm:gap-16 mt-10 sm:mt-16">
         <div className="w-48 h-48 sm:w-56 sm:h-56">
           <img
             src="/profile-picture.png"
