@@ -22,31 +22,31 @@ export default function Home() {
             — Desarrollo Web.
           </p>
           <ul className="w-full bg-sky-100 text-sm sm:text-lg mt-6 sm:mt-6 rounded shadow-lg">
-            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            <ContactListItem border>
               <FaFilePdf
                 color={'#F40F02'}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
               Currículum
-            </li>
-            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            </ContactListItem>
+            <ContactListItem border>
               <FaGithub
                 color={'#24292E'}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
               GitHub
-            </li>
-            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            </ContactListItem>
+            <ContactListItem border>
               <FaLinkedin
                 color={'#0077B5'}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
               LinkedIn
-            </li>
-            <li className="flex gap-2 font-bold text-sky-950 py-3 ps-4 hover:bg-sky-200">
+            </ContactListItem>
+            <ContactListItem>
               <IoIosMail className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1" />
               esteban.castillo.contact@gmail.com
-            </li>
+            </ContactListItem>
           </ul>
         </div>
       </section>
@@ -92,10 +92,24 @@ export default function Home() {
           </article>
         ))}
       </section>
-
-      {/* Contact section */}
-      <section></section>
     </main>
+  );
+}
+
+interface ContactListItemProps {
+  children: React.ReactNode;
+  border?: boolean;
+}
+
+function ContactListItem({ children, border }: ContactListItemProps) {
+  return (
+    <li
+      className={`flex gap-2 font-bold text-sky-950 py-3 ps-4 ${
+        border ? 'border-b border-sky-300' : ''
+      } hover:bg-sky-200`}
+    >
+      {children}
+    </li>
   );
 }
 
