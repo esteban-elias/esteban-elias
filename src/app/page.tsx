@@ -66,7 +66,7 @@ export default function Home() {
             <img
               src={proyect.image}
               alt={`Imagen del proyecto ${proyect.name}`}
-              className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded-3xl shadow-xl"
+              className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded-xl shadow-xl"
             />
             <div className="sm:w-1/2">
               <div className="mt-2">
@@ -81,10 +81,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex gap-4 mt-5">
-                <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow-none hover:bg-sky-300">
+                <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
                   <a href={proyect.demoUrl}>Demo</a>
                 </button>
-                <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow-none hover:bg-sky-300">
+                <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
                   <a href={proyect.repoUrl}>Repo</a>
                 </button>
               </div>
