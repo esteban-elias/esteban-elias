@@ -1,5 +1,6 @@
 import { FaFilePdf, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IoIosMail } from 'react-icons/io';
+import { TbWorldWww } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -118,11 +119,22 @@ function ProyectArticle({ proyect }: ProyectArticleProps) {
           </div>
         </div>
         <div className="flex gap-4 mt-5">
-          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
-            <a href={proyect.demoUrl}>Demo</a>
+          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-5 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg active:shadow hover:bg-sky-300">
+            <a href={proyect.demoUrl} className='flex gap-2'>
+              <TbWorldWww
+                className="w-4 h-4 sm:w-5 sm:h-5 mt-1 sm:mt-0.5"
+              />
+              Demo
+            </a>
           </button>
-          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
-            <a href={proyect.repoUrl}>Repo</a>
+          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-5 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg active:shadow hover:bg-sky-300">
+            <a href={proyect.repoUrl} className='flex gap-2'>
+              <FaGithub
+                className="w-4 h-4 sm:w-5 sm:h-5 mt-1 sm:mt-0.5"
+                color={'#24292E'}
+              />
+              Repo
+            </a>
           </button>
         </div>
       </div>
