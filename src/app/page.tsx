@@ -1,3 +1,6 @@
+import { FaFilePdf, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { IoIosMail } from 'react-icons/io';
+
 export default function Home() {
   return (
     <main className="flex flex-col items-center min-h-screen max-w-3xl mx-auto px-5">
@@ -19,16 +22,29 @@ export default function Home() {
             — Desarrollo Web.
           </p>
           <ul className="w-full bg-sky-100 text-sm sm:text-lg mt-6 sm:mt-6 border border-sky-300 rounded shadow-lg">
-            <li className="font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
-              Curriculum
+            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+              <FaFilePdf
+                color={'#F40F02'}
+                className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
+              />
+              Currículum
             </li>
-            <li className="font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+              <FaGithub
+                color={'#24292E'}
+                className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
+              />
               GitHub
             </li>
-            <li className="font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 border-b border-sky-300 hover:bg-sky-200">
+              <FaLinkedin
+                color={'#0077B5'}
+                className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
+              />
               LinkedIn
             </li>
-            <li className="font-bold text-sky-950 py-2 ps-4 hover:bg-sky-200">
+            <li className="flex gap-2 font-bold text-sky-950 py-2 ps-4 hover:bg-sky-200">
+              <IoIosMail className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1" />
               esteban.castillo.contact@gmail.com
             </li>
           </ul>
@@ -57,7 +73,9 @@ export default function Home() {
                 <h3 className="font-montserrat font-bold text-sky-950 text-xl mt-6">
                   {proyect.name}
                 </h3>
-                <p className="text-sky-900 mt-3">{proyect.description}</p>
+                <p className="text-sky-900 mt-3">
+                  {proyect.description}
+                </p>
                 <div className="font-bold text-sky-900 mt-3">
                   {proyect.techStack.join(' - ')}
                 </div>
