@@ -52,45 +52,15 @@ export default function Home() {
       </section>
 
       {/* Projects section */}
-      <section className="flex flex-col w-full grow mt-8 sm:mt-12">
+      <section className="flex flex-col mt-8 sm:mt-12">
         <h2 className="font-montserrat font-bold text-sky-900 text-xl sm:text-2xl">
           Proyectos
         </h2>
-        {proyects.map((proyect, index) => (
-          <article
-            key={proyect.id}
-            className={`sm:h-60 flex flex-col sm:flex-row sm:items-center ${
-              index == 0 ? 'mt-9 sm:mt-10' : 'mt-20'
-            } sm:gap-10 rounded`}
-          >
-            <img
-              src={proyect.image}
-              alt={`Imagen del proyecto ${proyect.name}`}
-              className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded-xl shadow-xl"
-            />
-            <div className="sm:w-1/2">
-              <div className="mt-2">
-                <h3 className="font-montserrat font-bold text-sky-950 text-xl mt-6">
-                  {proyect.name}
-                </h3>
-                <p className="text-sky-900 mt-3">
-                  {proyect.description}
-                </p>
-                <div className="font-bold text-sky-900 mt-3">
-                  {proyect.techStack.join(' - ')}
-                </div>
-              </div>
-              <div className="flex gap-4 mt-5">
-                <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
-                  <a href={proyect.demoUrl}>Demo</a>
-                </button>
-                <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
-                  <a href={proyect.repoUrl}>Repo</a>
-                </button>
-              </div>
-            </div>
-          </article>
-        ))}
+        <div className='flex flex-col gap-20 mt-9 sm:mt-10'>
+          {proyects.map((proyect) => (
+            <ProyectArticle key={proyect.id} proyect={proyect} />
+          ))}
+        </div>
       </section>
     </main>
   );
@@ -113,7 +83,54 @@ function ContactListItem({ children, border }: ContactListItemProps) {
   );
 }
 
-const proyects = [
+interface Proyect {
+  id: number;
+  name: string;
+  description: string;
+  techStack: string[];
+  image: string;
+  demoUrl: string;
+  repoUrl: string;
+}
+
+interface ProyectArticleProps {
+  proyect: Proyect;
+}
+
+function ProyectArticle({ proyect }: ProyectArticleProps) {
+  return (
+    <article className='sm:h-60 flex flex-col sm:flex-row sm:items-center sm:gap-10 rounded'>
+      <img
+        src={proyect.image}
+        alt={`Imagen del proyecto ${proyect.name}`}
+        className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded-xl shadow-xl"
+      />
+      <div className="sm:w-1/2">
+        <div className="mt-2">
+          <h3 className="font-montserrat font-bold text-sky-950 text-xl mt-6">
+            {proyect.name}
+          </h3>
+          <p className="text-sky-900 mt-3">
+            {proyect.description}
+          </p>
+          <div className="font-bold text-sky-900 mt-3">
+            {proyect.techStack.join(' - ')}
+          </div>
+        </div>
+        <div className="flex gap-4 mt-5">
+          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
+            <a href={proyect.demoUrl}>Demo</a>
+          </button>
+          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-4 py-2 rounded-full shadow-lg active:shadow hover:bg-sky-300">
+            <a href={proyect.repoUrl}>Repo</a>
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+const proyects: Proyect[] = [
   {
     id: 1,
     name: 'Proyecto 1',
