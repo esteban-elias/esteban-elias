@@ -14,8 +14,8 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        sans: ['var(--font-open-sans)'],
-        montserrat: ['var(--font-montserrat)'],
+        garamond: ['var(--font-garamond)'],
+        alegreya: ['var(--font-alegreya)'],
       },
       spacing: {
         128: '32rem',

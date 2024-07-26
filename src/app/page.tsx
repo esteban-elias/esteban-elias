@@ -1,6 +1,5 @@
-import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import { TbWorldWww } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col items-center sm:items-start">
-          <h1 className="font-montserrat antialiased font-bold text-sky-950 text-2xl sm:text-4xl mt-4 sm:mt-0">
+          <h1 className="font-alegreya antialiased font-bold text-sky-950 text-2xl sm:text-4xl mt-4 sm:mt-0">
             Esteban Elías
           </h1>
           <p className="max-w-sm text-sky-900 text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-4">
@@ -41,8 +40,8 @@ export default function Home() {
 
       {/* Projects section */}
       <section className="flex flex-col mt-8 sm:mt-12">
-        <h2 className="font-montserrat antialiased font-bold text-sky-900 text-xl sm:text-2xl mb-4">
-          🧑🏽‍💻 - 📜 - 🖌
+        <h2 className="font-alegreya antialiased font-bold text-sky-900 text-xl sm:text-2xl mb-4">
+          🧑🏽‍💻 🖌 📜
         </h2>
         <div className="flex flex-col gap-20 mt-9 sm:mt-10">
           {proyects.map((proyect) => (
@@ -94,7 +93,7 @@ function ProyectArticle({ proyect }: ProyectArticleProps) {
       />
       <div className="sm:w-1/2">
         <div className="mt-2">
-          <h3 className="font-montserrat antialiased font-bold text-sky-950 text-xl mt-6">
+          <h3 className="font-alegreya antialiased font-bold text-sky-950 text-xl mt-6">
             {proyect.name}
           </h3>
           <p className="text-sky-900 mt-3">{proyect.description}</p>
