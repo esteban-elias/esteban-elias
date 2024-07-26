@@ -43,7 +43,7 @@ export default function Home() {
         <h2 className="font-alegreya antialiased font-bold text-sky-900 text-xl sm:text-2xl mb-4">
           🧑🏽‍💻 🖌 📜
         </h2>
-        <div className="flex flex-col gap-20 mt-9 sm:mt-10">
+        <div className="flex flex-col gap-20 mt-10 sm:mt-10">
           {proyects.map((proyect) => (
             <ProyectArticle key={proyect.id} proyect={proyect} />
           ))}
@@ -104,7 +104,7 @@ function ProyectArticle({ proyect }: ProyectArticleProps) {
         <div className="mt-4">
           <iframe
             src={proyect.spotifyUrl}
-            className="w-full sm:w-100 opacity-80"
+            className="w-68 sm:w-60 opacity-80 self-end"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; pictue-in-picture"
             loading="lazy"
           ></iframe>
