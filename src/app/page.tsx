@@ -26,8 +26,6 @@ export default function Home() {
                 color={"#24292E"}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
-              {/* Look at my code */}
-
               <a href="https://github.com/esteban-elias">Look at my code</a>
             </ContactListItem>
             <ContactListItem>
@@ -38,24 +36,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects section */}
+      {/* Writings section */}
       <section className="flex flex-col mt-8 sm:mt-12">
         <h2 className="font-alegreya antialiased font-bold text-sky-900 text-xl sm:text-2xl mb-4">
           🧑🏽‍💻 🖌 📜
         </h2>
         <div className="flex flex-col gap-20 mt-10 sm:mt-10">
-          {proyects.map((proyect) => (
-            <ProyectArticle key={proyect.id} proyect={proyect} />
+          {posts.map((post) => (
+            <Post key={post.id} post={post} />
           ))}
         </div>
       </section>
     </main>
   );
-}
-
-interface ContactListItemProps {
-  children: React.ReactNode;
-  border?: boolean;
 }
 
 function ContactListItem({ children, border }: ContactListItemProps) {
@@ -70,40 +63,27 @@ function ContactListItem({ children, border }: ContactListItemProps) {
   );
 }
 
-interface Proyect {
-  id: number;
-  name: string;
-  description: string;
-  techStack: string[];
-  image: string;
-  spotifyUrl: string;
-}
-
-interface ProyectArticleProps {
-  proyect: Proyect;
-}
-
-function ProyectArticle({ proyect }: ProyectArticleProps) {
+function Post({ post }: PostProps) {
   return (
     <article className="sm:h-60 flex flex-col sm:flex-row sm:gap-10 rounded">
       <img
-        src={proyect.image}
-        alt={`Imagen del proyecto ${proyect.name}`}
+        src={post.image}
+        alt={`Imagen del proyecto ${post.name}`}
         className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded-xl shadow-xl"
       />
       <div className="sm:w-1/2">
         <div className="mt-2">
           <h3 className="font-alegreya antialiased font-bold text-sky-950 text-xl mt-6">
-            {proyect.name}
+            {post.name}
           </h3>
-          <p className="text-sky-900 mt-3">{proyect.description}</p>
+          <p className="text-sky-900 mt-3">{post.description}</p>
           <div className="font-bold text-sky-900 mt-3">
-            {proyect.techStack.join(" - ")}
+            {post.tags.join(" - ")}
           </div>
         </div>
         <div className="mt-4">
           <iframe
-            src={proyect.spotifyUrl}
+            src={post.spotifyUrl}
             className="w-68 sm:w-60 opacity-80 self-end"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; pictue-in-picture"
             loading="lazy"
@@ -114,12 +94,12 @@ function ProyectArticle({ proyect }: ProyectArticleProps) {
   );
 }
 
-const proyects: Proyect[] = [
+const posts: Post[] = [
   {
     id: 1,
     name: "Polishing the thought",
     description: "where everything starts",
-    techStack: ["spirit", "spark"],
+    tags: ["spirit", "spark"],
     image: "/polishing-the-thought.png",
     spotifyUrl:
       "https://open.spotify.com/embed/track/5S5ap2qVplxMQxWRulc72Z?utm_source=generator",
@@ -128,7 +108,7 @@ const proyects: Proyect[] = [
     id: 1,
     name: "The animalistic and the virtuous",
     description: "metaphysical commonplaces",
-    techStack: ["self-forgiveness", "self-forgotness"],
+    tags: ["self-forgiveness", "self-forgotness"],
     image: "/animalistic-virtue.png",
     spotifyUrl:
       "https://open.spotify.com/embed/track/7HSs4srn1qnZhh7WRWBVOk?utm_source=generator",
