@@ -30,7 +30,7 @@ export default function Home() {
             </ContactListItem>
             <ContactListItem>
               <IoIosMail className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1" />
-              <a href={`mailto:esteban.elias.contact@`}>Send me an email</a>
+              <a href={`mailto:esteban.elias.contact@gmail.com`}>Send me an email</a>
             </ContactListItem>
           </ul>
         </div>
