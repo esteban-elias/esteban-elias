@@ -108,7 +108,7 @@ const posts: Post[] = [
     id: 1,
     name: "The animalistic and the virtuous",
     description: "metaphysical commonplaces",
-    tags: ["self-forgiveness", "self-forgotness"],
+    tags: ["self-forgiveness", "self-forgetting"],
     image: "/animalistic-virtue.png",
     spotifyUrl:
       "https://open.spotify.com/embed/track/7HSs4srn1qnZhh7WRWBVOk?utm_source=generator",
