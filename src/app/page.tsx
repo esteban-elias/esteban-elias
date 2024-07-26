@@ -1,5 +1,5 @@
-import { FaFilePdf, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { IoIosMail } from 'react-icons/io';
+import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 import { TbWorldWww } from "react-icons/tb";
 
 export default function Home() {
@@ -15,38 +15,25 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-col items-center sm:items-start">
-          <h1 className="font-montserrat font-bold text-sky-950 text-2xl sm:text-4xl mt-4 sm:mt-0">
-            Esteban Castillo
+          <h1 className="font-montserrat antialiased font-bold text-sky-950 text-2xl sm:text-4xl mt-4 sm:mt-0">
+            Esteban Elías
           </h1>
           <p className="max-w-sm text-sky-900 text-sm sm:text-lg text-justify hyphens-auto sm:text-left mt-4">
-            Analista Programador y estudiante de Ingeniería Informática
-            — Desarrollo Web.
+            a place about me and my interests
           </p>
           <ul className="w-full bg-sky-100 text-sm sm:text-lg mt-6 sm:mt-6 rounded shadow-lg">
             <ContactListItem border>
-              <FaFilePdf
-                color={'#F40F02'}
-                className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
-              />
-              Currículum
-            </ContactListItem>
-            <ContactListItem border>
               <FaGithub
-                color={'#24292E'}
+                color={"#24292E"}
                 className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
               />
-              GitHub
-            </ContactListItem>
-            <ContactListItem border>
-              <FaLinkedin
-                color={'#0077B5'}
-                className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1"
-              />
-              LinkedIn
+              {/* Look at my code */}
+
+              <a href="https://github.com/esteban-elias">Look at my code</a>
             </ContactListItem>
             <ContactListItem>
               <IoIosMail className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 sm:mt-1" />
-              esteban.castillo.contact@gmail.com
+              <a href={`mailto:esteban.elias.contact@`}>Send me an email</a>
             </ContactListItem>
           </ul>
         </div>
@@ -54,10 +41,10 @@ export default function Home() {
 
       {/* Projects section */}
       <section className="flex flex-col mt-8 sm:mt-12">
-        <h2 className="font-montserrat font-bold text-sky-900 text-xl sm:text-2xl">
-          Proyectos
+        <h2 className="font-montserrat antialiased font-bold text-sky-900 text-xl sm:text-2xl mb-4">
+          🧑🏽‍💻 - 📜 - 🖌
         </h2>
-        <div className='flex flex-col gap-20 mt-9 sm:mt-10'>
+        <div className="flex flex-col gap-20 mt-9 sm:mt-10">
           {proyects.map((proyect) => (
             <ProyectArticle key={proyect.id} proyect={proyect} />
           ))}
@@ -76,7 +63,7 @@ function ContactListItem({ children, border }: ContactListItemProps) {
   return (
     <li
       className={`flex gap-2 font-bold text-sky-950 py-3 ps-4 ${
-        border ? 'border-b border-sky-300' : ''
+        border ? "border-b border-sky-300" : ""
       } hover:bg-sky-200`}
     >
       {children}
@@ -90,8 +77,7 @@ interface Proyect {
   description: string;
   techStack: string[];
   image: string;
-  demoUrl: string;
-  repoUrl: string;
+  spotifyUrl: string;
 }
 
 interface ProyectArticleProps {
@@ -100,7 +86,7 @@ interface ProyectArticleProps {
 
 function ProyectArticle({ proyect }: ProyectArticleProps) {
   return (
-    <article className='sm:h-60 flex flex-col sm:flex-row sm:items-center sm:gap-10 rounded'>
+    <article className="sm:h-60 flex flex-col sm:flex-row sm:gap-10 rounded">
       <img
         src={proyect.image}
         alt={`Imagen del proyecto ${proyect.name}`}
@@ -108,34 +94,21 @@ function ProyectArticle({ proyect }: ProyectArticleProps) {
       />
       <div className="sm:w-1/2">
         <div className="mt-2">
-          <h3 className="font-montserrat font-bold text-sky-950 text-xl mt-6">
+          <h3 className="font-montserrat antialiased font-bold text-sky-950 text-xl mt-6">
             {proyect.name}
           </h3>
-          <p className="text-sky-900 mt-3">
-            {proyect.description}
-          </p>
+          <p className="text-sky-900 mt-3">{proyect.description}</p>
           <div className="font-bold text-sky-900 mt-3">
-            {proyect.techStack.join(' - ')}
+            {proyect.techStack.join(" - ")}
           </div>
         </div>
-        <div className="flex gap-4 mt-5">
-          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-5 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg active:shadow hover:bg-sky-300">
-            <a href={proyect.demoUrl} className='flex gap-2'>
-              <TbWorldWww
-                className="w-4 h-4 sm:w-5 sm:h-5 mt-1 sm:mt-0.5"
-              />
-              Demo
-            </a>
-          </button>
-          <button className="bg-sky-100 border border-1 border-sky-300 font-bold text-sky-950 px-5 sm:px-6 py-2 sm:py-3 rounded-full shadow-lg active:shadow hover:bg-sky-300">
-            <a href={proyect.repoUrl} className='flex gap-2'>
-              <FaGithub
-                className="w-4 h-4 sm:w-5 sm:h-5 mt-1 sm:mt-0.5"
-                color={'#24292E'}
-              />
-              Repo
-            </a>
-          </button>
+        <div className="mt-4">
+          <iframe
+            src={proyect.spotifyUrl}
+            className="w-full sm:w-100 opacity-80"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; pictue-in-picture"
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </article>
@@ -145,62 +118,20 @@ function ProyectArticle({ proyect }: ProyectArticleProps) {
 const proyects: Proyect[] = [
   {
     id: 1,
-    name: 'Proyecto 1',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
-    techStack: ['React', 'Tailwind', 'Next.js'],
-    image: 'https://picsum.photos/200/300',
-    demoUrl: 'https://www.google.com',
-    repoUrl: 'https://www.google.com',
+    name: "Polishing the thought",
+    description: "where everything starts",
+    techStack: ["spirit", "spark"],
+    image: "/polishing-the-thought.png",
+    spotifyUrl:
+      "https://open.spotify.com/embed/track/5S5ap2qVplxMQxWRulc72Z?utm_source=generator",
   },
   {
-    id: 2,
-    name: 'Proyecto 2',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
-    techStack: ['React', 'Tailwind', 'Next.js'],
-    image: 'https://picsum.photos/200/300',
-    demoUrl: 'https://www.google.com',
-    repoUrl: 'https://www.google.com',
-  },
-  {
-    id: 3,
-    name: 'Proyecto 3',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
-    techStack: ['React', 'Tailwind', 'Next.js'],
-    image: 'https://picsum.photos/200/300',
-    demoUrl: 'https://www.google.com',
-    repoUrl: 'https://www.google.com',
-  },
-  {
-    id: 4,
-    name: 'Proyecto 4',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
-    techStack: ['React', 'Tailwind', 'Next.js'],
-    image: 'https://picsum.photos/200/300',
-    demoUrl: 'https://www.google.com',
-    repoUrl: 'https://www.google.com',
-  },
-  {
-    id: 5,
-    name: 'Proyecto 5',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
-    techStack: ['React', 'Tailwind', 'Next.js'],
-    image: 'https://picsum.photos/200/300',
-    demoUrl: 'https://www.google.com',
-    repoUrl: 'https://www.google.com',
-  },
-  {
-    id: 6,
-    name: 'Proyecto 6',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptatem.',
-    techStack: ['React', 'Tailwind', 'Next.js'],
-    image: 'https://picsum.photos/200/300',
-    demoUrl: 'https://www.google.com',
-    repoUrl: 'https://www.google.com',
+    id: 1,
+    name: "The animalistic and the virtuous",
+    description: "metaphysical commonplaces",
+    techStack: ["self-forgiveness", "self-forgotness"],
+    image: "/animalistic-virtue.png",
+    spotifyUrl:
+      "https://open.spotify.com/embed/track/7HSs4srn1qnZhh7WRWBVOk?utm_source=generator",
   },
 ];
