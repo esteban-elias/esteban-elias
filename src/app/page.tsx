@@ -36,17 +36,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Writings section */}
-      <section className="flex flex-col mt-8 sm:mt-12">
-        <h2 className="font-alegreya antialiased font-bold text-sky-900 text-xl sm:text-2xl mb-4">
-          🧑🏽‍💻 🖌 📜
-        </h2>
-        <div className="flex flex-col gap-20 mt-10 sm:mt-10">
-          {posts.map((post) => (
-            <Post key={post.id} post={post} />
-          ))}
-        </div>
-      </section>
     </main>
   );
 }
@@ -62,55 +51,3 @@ function ContactListItem({ children, border }: ContactListItemProps) {
     </li>
   );
 }
-
-function Post({ post }: PostProps) {
-  return (
-    <article className="sm:h-60 flex flex-col sm:flex-row sm:gap-10 rounded">
-      <img
-        src={post.image}
-        alt={`Imagen del proyecto ${post.name}`}
-        className="object-cover w-full sm:w-1/2 aspect-[3/2] rounded-xl shadow-xl"
-      />
-      <div className="sm:w-1/2">
-        <div className="mt-2">
-          <h3 className="font-alegreya antialiased font-bold text-sky-950 text-xl mt-6">
-            {post.name}
-          </h3>
-          <p className="text-sky-900 mt-3">{post.description}</p>
-          <div className="font-bold text-sky-900 mt-3">
-            {post.tags.join(" - ")}
-          </div>
-        </div>
-        <div className="mt-4">
-          <iframe
-            src={post.spotifyUrl}
-            className="w-68 sm:w-60 opacity-80 self-end"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; pictue-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-const posts: Post[] = [
-  {
-    id: 1,
-    name: "Polishing the thought",
-    description: "where everything starts",
-    tags: ["spirit", "spark"],
-    image: "/polishing-the-thought.png",
-    spotifyUrl:
-      "https://open.spotify.com/embed/track/5S5ap2qVplxMQxWRulc72Z?utm_source=generator",
-  },
-  {
-    id: 1,
-    name: "The animalistic and the virtuous",
-    description: "metaphysical commonplaces",
-    tags: ["self-forgiveness", "self-forgetting"],
-    image: "/animalistic-virtue.png",
-    spotifyUrl:
-      "https://open.spotify.com/embed/track/7HSs4srn1qnZhh7WRWBVOk?utm_source=generator",
-  },
-];
